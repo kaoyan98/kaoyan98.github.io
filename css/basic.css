@@ -1,0 +1,72 @@
+﻿  *{margin:0px; padding:0px; list-style-type:none;}
+#header{width:100%;height:76px; background:#293240;}
+#header .header_con{width:1200px; margin:0px auto;}
+#header .header_con .logo{float:left;width:400px; padding-top:19px; }
+#header .header_con ul{padding:0px; margin:0px; float:left; line-height:76px;}
+#header .header_con ul li{width:200px; text-align:center; font-family:"微软雅黑"; float:left; margin:0px 30px; }
+#header .header_con ul li a{display:block; text-decoration:none; font-size:16px; color:#fff; }
+
+/*网站导航*/
+#Nav{width:100%;height:55px; background:#000;  border-bottom:2px solid #ff0066; background:url("../images/na.gif");}
+#Nav ul{width:1000px; height:55px; margin:0px auto; position:relative;}
+#Nav ul li{float:left;   font-size:14px; color:rgba(255,255,255,0.5);  width:100px; margin:0px 5px;
+			text-align:center; position:relative; height:55px; }
+#Nav ul li a{line-height:55px;  color:#fff; text-decoration:none; display:block;
+			position:absolute; z-index:33;  width:100%;}
+#Nav ul li.hk{width:100px; height:55px;background:#ea3a7c; position:absolute; top:0px; left:209px;margin:0px;}
+#Nav ul li.index{width:194px; }
+
+
+#Nav ul li.index a{display:block; font-weight:bold; color:rgba(255,255,255,0.5);font-size:24px; position:relative;background:-webkit-linear-gradient(-30deg,rgba(255,255,255,1) 0px,rgba(255,255,255,1) 30px,rgba(255,255,255,0) 30px,rgba(255,255,255,0)) -20px 6px no-repeat;-webkit-background-clip:text;
+			}
+
+#Nav ul li.index #bz{width:100px; height:100px; background:url("../images/logo3.png") no-repeat bottom center,url("../images/line.png") no-repeat top center;position:absolute; left:-80px;}
+
+
+
+#flash{width:100%; height:518px; background:url("../images/banner.jpg") no-repeat top center;}
+
+/*web前端课程介绍*/
+  #web_Coursemain{width:100%;  }
+  #web_Course{width:1200px; margin:57px auto 0px; }
+  #web_Course h2{line-height:100px; font-size:30px; text-align:center;  }
+  #web_Course ul li{width:370px; height:420px; box-shadow:0px 0px 15px #000; float:left; margin:0px 15px; border-radius:10px;
+					background:#fff;}
+  #web_Course ul li div.color_bg{width:370px;height:100px; background:#22b1f3;box-shadow:5px 5px 5px #666;
+								border-radius:10px 10px 0px 0px; position:relative;}
+  #web_Course ul li div.color_bg p{width:100px;height:100px; background:#fff; border:10px solid #22b1f3; border-radius:120px;
+								position:absolute; left:125px; top:0px; font-size:25px;text-align:center; line-height:100px;
+								font-family:"微软雅黑";}
+  #web_Course ul li div.color2{background:#b052c0;}
+  #web_Course ul li div.color2 p{border:10px solid #b052c0;}
+  #web_Course ul li div.color3{background:#ea4644;}
+  #web_Course ul li div.color3 p{border:10px solid #ea4644;}
+
+  #web_Course ul li h3{padding:40px 0px 10px 0px; font-size:20px;font-family:"微软雅黑"; text-align:center; 
+						border-bottom:1px solid #ddd; width:90%; margin:0px auto;color:#666666; margin-bottom:15px;} 
+  #web_Course ul li p{font-size:14px; line-height:25px;font-family:"微软雅黑";} 
+  #web_Course ul li p.desc{ padding:0px 15px 0px 15px; }
+  #web_Course ul li p.desc2{padding-bottom:15px;}
+  #web_Course ul li p span{color:red; font-size:14px;}
+
+  #web_Course ul li a.btn{width:150px; height:50px; background:#b660c5; display:block; margin:10px auto 0px; border-radius:5px;
+						color:#fff; font-size:14px; line-height:50px; text-decoration:none; text-align:center; font-weight:bold;}
+
+
+
+/*讲师简介*/
+#teacher{width:100%;height:800px; background:url("../images/bg6.png");}
+#teacher .con{width:800px; margin:0px auto;color:#646367;  font-family:"微软雅黑"; text-align:center;}
+#teacher .con h3{font-weight:100; line-height:55px; padding-top:15px; font-size:30px; color:#fff; font-weight:bold;font-family:"微软雅黑";}
+#teacher .con p{font-size:12px; line-height:25px; color:#000;}
+#teacher .con p.title{font-size:16px; color:#fff;}
+
+/*宽高可以改*/
+#showBox{width:100%;height:300px;position:relative;margin:50px auto;perspective:800px;}
+#showBox ul{width:100%;height:100%;transform-style:preserve-3d;}
+#showBox ul li{padding:10px;width:300px;border:1px solid #ddd; box-shadow:0px 2px 2px #000;position:absolute;transform-origin:left;transform:rotateY(30deg);transition:.5s; background:rgba(255,255,255,0.9);}
+#showBox ul li.on{transform:rotateY(0deg) translateZ(2px);  background:#ffffcc;z-index:222;}
+#showBox ul li p a{color:#000; text-decoration:none;}
+
+/*网站底部*/
+#footer{width:100%; height:80px; background:#293240; color:#ddd; text-align:center; font-size:14px; line-height:80px;font-family:"微软雅黑";}
