@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="https://cdn.bootcss.com/normalize/3.0.3/normalize.css" rel="stylesheet">
+</head>
+<style>
+.nim:hover{background: #f9f9f9;}
+.nim:hover .yc{display: inline-block!important;}
+.nim:hover .time{display:none;}
+.hf{display: inline-block;width:30px;height: 20px;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAYAAADnEwSWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjgxQzQyRDEyQkVFMTFFNzk2RUNCNUM5RDAyQTVGNkMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjgxQzQyRDIyQkVFMTFFNzk2RUNCNUM5RDAyQTVGNkMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyODFDNDJDRjJCRUUxMUU3OTZFQ0I1QzlEMDJBNUY2QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyODFDNDJEMDJCRUUxMUU3OTZFQ0I1QzlEMDJBNUY2QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pn0haHMAAADhSURBVHjaYvz69SvDkiVLbBgYGNyBmJWBuuAPEO+LiYnZB+Iwzpw5MwdIT2agLagGWtjGBGSUMtAeFANDjxFkmRwdLBMCYj4mIhV/BuJUIN5BiY3EWnYZiOcAsScQhwDxI1pa9g+JvRaItYG4E4h/0cIydPAFiCuA2ASIX9DaMuTgvUYPyxSBeAsQO9HSMjYgrgXiq0DsTYpGFiLViQMxMxC7AvFEIFYjJyiItUwViD8AMQ+l+ewbkWopsegvEP8EWXaADsXVEWBB/ANkWQoQbyI1gxIJfgPxLiCOBnEAAgwAYU8tFRTI36YAAAAASUVORK5CYII=") no-repeat 0px 0px;  }
+.zb{display: inline-block;width:30px;height: 20px;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAYAAADnEwSWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTU1RkE4RDkyQkI2MTFFNzg5OThFOTQ1QUE3RjM0RkMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTU1RkE4REEyQkI2MTFFNzg5OThFOTQ1QUE3RjM0RkMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5NTVGQThENzJCQjYxMUU3ODk5OEU5NDVBQTdGMzRGQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5NTVGQThEODJCQjYxMUU3ODk5OEU5NDVBQTdGMzRGQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pph3XQAAAAE7SURBVHjaYvz69SvDkiVLbBgYGNyBmJWBdPAbiHcC8RFcCmJiYsA048yZM3OA9GQGysB/IM4D4ilo4mZAHATEW4EWHgZZ9hDIkWOgHDwAYkUoWwWIm4A4AuQhIP4KxEIsVLIIBBSAWASIq4A4G4jZkOS4gZiTBY/mZiD+A8TFQMxHpIW3gVgAlyQTHo1zgOEMCgoNIF4KjRdCQACfJBMh3UALn4MoIHYC4muUhDMTCWoPALEByMf0sAyWpw7TwzJOIG4E4pnkWsZCpDofIJ4IxEqUxBk+y2SBxRio+OoDYj9qZEQmAgniFokWxQLxI3yWfcPja1LiFGTOEmi+LAHiD2jyf5igPqAG2A+lvwNxLxArA3EPtMzsBebXryDLUoB4ExD/ItOSX1D9qWji74C4FFQ4Ay0C+ZQBIMAA3HFBXqHBMQAAAAAASUVORK5CYII=") no-repeat 0px 0px;  }
+.fr{float:right;}
+.fr{float:right;}
+.yf .str{display: inline-block;width:30px;height: 20px;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0JDRTJDRjkyQjMzMTFFN0I5MUVDMUMxMTA0RjZGOTkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0JDRTJDRkEyQjMzMTFFN0I5MUVDMUMxMTA0RjZGOTkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQkNFMkNGNzJCMzMxMUU3QjkxRUMxQzExMDRGNkY5OSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQkNFMkNGODJCMzMxMUU3QjkxRUMxQzExMDRGNkY5OSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pl5cUZIAAAYgSURBVHja7J17iFRV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") no-repeat -65px 6px;  }
+
+
+
+</style>
+
+
+
+<div class="nei">
+                <ul>
+                    <li class="tabBox" style="display: none;">
+                        <div class="content">
+		                    <img src="http://img.kaoshidian.com/img/live/201708/1502272633739.jpg" alt=""><br>
+<p>
+	<img src="http://img.kaoshidian.com/img/live/201710/1507791159812.jpg" title="图片1507791159812.jpg" alt="图片1507791159812.jpg"><span style="font-family:&quot;color:#E53333;"><span style="font-family:&quot;color:#000000;"><span style="line-height:2;"><span style="font-size:18px;"><span style="font-size:32px;font-family:&quot;background-color:#E53333;color:#337FE5;"><strong><img src="http://img.kaoshidian.com/img/live/201710/1507791178611.jpg" title="图片1507791178611.jpg" alt="图片1507791178611.jpg">米神2018考研最有价值套餐课：政治报这个班就够了</strong></span></span></span></span></span> 
+</p>
+<p>
+	<span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:'Microsoft YaHei';color:#E53333;line-height:1.5;"><strong>冲刺串讲</strong></span><span style="font-family:'Microsoft YaHei';color:#E53333;line-height:1.5;"><strong>班</strong></span></span><span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:'Microsoft YaHei';line-height:1.5;">：<span style="font-family:KaiTi_GB2312;">投阅卷人之所好</span></span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">传授高分答题模板。猜命题人之所想</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">准确定位真题考点</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">.</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">不要蓝瘦香菇</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">考前背什么</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">米神冲刺大串讲！</span><span></span></span> 
+</p>
+<p>
+	<span style="font-size:12pt;line-height:1.5;font-family:'Microsoft YaHei';color:#E53333;"><strong>火线救援班</strong></span><span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:'Microsoft YaHei';line-height:1.5;">：<span style="font-family:KaiTi_GB2312;">两次课</span></span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">6小时</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">能有怎样的效果？裸考者完成0分到60分的飞跃</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">学渣者完成40</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">分到</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">70</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">分的飞跃</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">学霸者完成</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">70</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">分到</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">85</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">分的飞跃。信不信由你</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">反正考过的都相信</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">。</span></span> 
+</p>
+<p>
+	<span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:'Microsoft YaHei';color:#E53333;line-height:1.5;"><strong>考前</strong></span><span style="font-family:'Microsoft YaHei';color:#E53333;line-height:1.5;"><strong>30</strong></span><span style="font-family:'Microsoft YaHei';color:#E53333;line-height:1.5;"><strong>天75分密训</strong></span></span><span style="font-size:12pt;line-height:1.5;font-family:'Microsoft YaHei';">:</span><span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:KaiTi_GB2312;line-height:1.5;">别傻了</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">你还复习世界经济与政治，听米神两小时公益讲座</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">他把第</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">38</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">题的材料问题答案都告诉你</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">这</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">10</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">分来得就这么轻松。</span><span></span></span> 
+</p>
+<p>
+	<span style="font-size:12pt;line-height:1.5;font-family:'Microsoft YaHei';color:#E53333;"><strong>考前最后一小时密训</strong></span><span style="font-size:12pt;line-height:1.5;font-family:'Microsoft YaHei';">:</span><span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:KaiTi_GB2312;line-height:1.5;">思修背什么</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">呵呵</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">思修还要背吗？思修要会抄</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">听米神思修教你答分析题现编现抄的秘诀，帮你轻轻松松再搞定</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">10</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">分</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">本武功只传米粉米饭，概不外传。</span><span></span></span> 
+</p>
+<p>
+	<span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:'Microsoft YaHei';color:#E53333;line-height:1.5;"><strong>密押三套卷精讲</strong></span><span style="font-family:'Microsoft YaHei';line-height:1.5;">:</span></span><span style="font-size:12.0pt;line-height:115%;font-family:宋体;"><span style="font-family:KaiTi_GB2312;line-height:1.5;">同样的命制流程</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">同样的严格要求，同样的反复论证</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">同样的测试效果</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">它是真题的提前展现</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">它是考试的模拟预演</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">听命题者给你讲述研发试题初心</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">听阅卷人给你讲述考场得分细则。米鹏封神的三套卷</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">—旦错过</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">,</span><span style="font-family:KaiTi_GB2312;line-height:1.5;">又是一年的等待！</span></span> 
+</p>
+<span style="font-size:18px;"></span> 
+<p>
+	<br>
+</p>
+<p>
+	<img src="http://img.kaoshidian.com/img/live/201710/1509002283670.png" title="图片1509002283670.png" alt="图片1509002283670.png"><img src="http://img.kaoshidian.com/img/live/201710/1509002297335.png" title="图片1509002297335.png" alt="图片1509002297335.png"><img src="http://img.kaoshidian.com/img/live/201710/1509002307396.png" title="图片1509002307396.png" alt="图片1509002307396.png"><img src="http://img.kaoshidian.com/img/live/201710/1509002316322.png" title="图片1509002316322.png" alt="图片1509002316322.png">
+</p>
+		                </div>
+		                <div class="js-nr-e" style="background: #F5F5F5 ;padding:50px 30px "></div>
+                    </li>
+                    <li class="tabBox" style="">
+						<div class="km-nr">
+	                        <div class="hui">
+	                            <span>10月19日开课</span><em class="Bars">
+	                            <div style="width: 11.111111%;">
+	                                <b><img src="http://www.kaoshidian.com/resources/v3/images/dz.png" alt=""></b>
+	                            </div>
+	                        </em><span>12月22日 结课</span>
+	                        </div>
+	                    </div>
+                        
+                       	<div class="btm">
+                        	<div>
+                            	<dl>
+	                                <h3>
+	                                    <div class="xia-s"><img src="http://www.kaoshidian.com/resources/v3/images/sb.png" alt="" style="margin-right: 10px "><em>十九大专题讲座</em></div>
+	                                </h3>
+	                                
+                                    <dt>
+	                                    
+										<a href="http://www.kaoshidian.com/replay/51392/13349" target="_blank"> 
+											<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+												<b style="margin-bottom: -6px" class="hf"></b>
+												<span style="display: inline-block;margin-bottom: 5px">【回放】2018考研政治十九大专题讲座</span>
+												
+												<span class="fr yf">
+			                                        <i class="time">
+			                                            <strong style="margin:0 10px -2px 0" class="str"></strong><span>02：38：50</span>
+			                                        </i>
+			                                        <em class="yc" style="display: none">开始学习</em>
+			                                    </span>
+											</div>
+	                                	</a>
+                                    	
+                                	</dt>
+                                	
+                                	
+                                	
+	                            </dl>
+                            	<dl>
+	                                <h3>
+	                                    <div class="xia-s"><img src="http://www.kaoshidian.com/resources/v3/images/sb.png" alt="" style="margin-right: 10px "><em>冲刺全真模拟六套卷</em></div>
+	                                </h3>
+	                                
+                                    <dt>
+	                                    
+										<a href="http://www.kaoshidian.com/replay/51392/13237" target="_blank"> 
+											<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+												<b style="margin-bottom: -6px" class="hf"></b>
+												<span style="display: inline-block;margin-bottom: 5px">【回放】模拟6套卷精讲（第一套）</span>
+												
+												<span class="fr yf">
+			                                        <i class="time">
+			                                            <strong style="margin:0 10px -2px 0" class="str"></strong><span>02：02：38</span>
+			                                        </i>
+			                                        <em class="yc" style="display: none">开始学习</em>
+			                                    </span>
+											</div>
+	                                	</a>
+                                    	
+                                	</dt>
+                                	
+                                	
+                                	
+	                                
+                                    <dt>
+	                                    
+										<a href="http://www.kaoshidian.com/replay/51392/13238" target="_blank"> 
+											<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+												<b style="margin-bottom: -6px" class="hf"></b>
+												<span style="display: inline-block;margin-bottom: 5px">【回放】模拟6套卷精讲（第二套）</span>
+												
+												<span class="fr yf">
+			                                        <i class="time">
+			                                            <strong style="margin:0 10px -2px 0" class="str"></strong><span>02：06：58</span>
+			                                        </i>
+			                                        <em class="yc" style="display: none">开始学习</em>
+			                                    </span>
+											</div>
+	                                	</a>
+                                    	
+                                	</dt>
+                                	
+                                	
+                                	
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】模拟6套卷精讲（第三套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：10月30日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】模拟6套卷精讲（第四套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月16日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】模拟6套卷精讲（第五套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月17日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】模拟6套卷精讲（第六套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月18日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                            </dl>
+                            	<dl>
+	                                <h3>
+	                                    <div class="xia-s"><img src="http://www.kaoshidian.com/resources/v3/images/sb.png" alt="" style="margin-right: 10px "><em>冲刺串讲</em></div>
+	                                </h3>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治名师米鹏冲刺点睛班-复习导学</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月07日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治思修冲刺串讲（1）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月08日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治思修冲刺串讲（2）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月09日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治毛中特冲刺串讲（1）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月10日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治纲要冲刺串讲（1）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月10日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治毛中特冲刺串讲（2）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月13日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治毛中特冲刺串讲（3）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月14日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治马原冲刺串讲（1）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月17日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治马原冲刺串讲（2）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月18日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治形势与政策冲刺串讲（1）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月19日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治形势与政策冲刺串讲（2）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月20日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】2018考研政治形势与政策冲刺串讲（3）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：11月21日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                            </dl>
+                            	<dl>
+	                                <h3>
+	                                    <div class="xia-s"><img src="http://www.kaoshidian.com/resources/v3/images/sb.png" alt="" style="margin-right: 10px "><em>密押三套卷</em></div>
+	                                </h3>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】密押三套卷（第一套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月03日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】密押三套卷（第二套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月04日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】密押三套卷（第一套）</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月05日 18:00  - 20:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                            </dl>
+                            	<dl>
+	                                <h3>
+	                                    <div class="xia-s"><img src="http://www.kaoshidian.com/resources/v3/images/sb.png" alt="" style="margin-right: 10px "><em>火线救援</em></div>
+	                                </h3>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】第38题（当代）答题模板及精准预测</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月16日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】思修分析题答题模版</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月17日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】选择题九阴真经，米神独家答题技巧</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月18日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】最后五道分析题独家终极密押精解精析</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月21日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                                
+	                                <dt>
+										<div class="nim" style="padding: 10px 20px 5px 40px;line-height: 40px">
+											<b style="margin-bottom: -6px" class="zb"></b><span style="display: inline-block;margin-bottom: 5px">【直播】终极一套测试卷解析</span>
+											<span class="fr yf">
+												<strong style="margin:0 10px -2px 0" class="str"></strong><span>直播时间：12月22日 19:00  - 21:00 </span>
+											</span>
+										</div>
+                                    </dt>
+	                            </dl>
+                        	</div>
+                        </div>
+                        <div class="js-nr-e" style="background: #F5F5F5 ;padding:50px 30px "></div>                   
+                    </li>
+                    <li id="app-1" class="tabBox" style="display: none;"><div class="km-nr"><div class="hui-a"><b>100%</b><em>好评率</em> <span class="xk"><input id="J_R" type="radio" name="radiogrounp" checked="checked"> <label for="J_R">全部评价（5）</label> <input id="J_R2" type="radio" name="radiogrounp"> <label for="J_R2">好评（5）</label> <input id="J_Ra" type="radio" name="radiogrounp"> <label for="J_Ra">中评（0）</label> <input id="J_R3" type="radio" name="radiogrounp"> <label for="J_R3">差评（0）</label></span></div></div> <div class="plq"><dl class="hd"><dt class="fl"><img src="http://ksd.oss-cn-shanghai.aliyuncs.com/uc_server/data/avatar/noavatar_big.png?x-oss-process=image/resize,m_lfit,h_100,w_100" width="100/"><p style="padding: 10px; font-weight: normal;">ksd188xxxx2150</p></dt> <dd class="fl"><div class="xbx"><div class="str-bf"><i class="i-1-1" style="width: 100%;"></i> <i class="i-1" style="width: 100%;"></i></div> <span><p style="color: rgb(51, 51, 51); font-weight: bold;"></p>老师辛苦了，谢谢！</span> <b style="color: rgb(153, 153, 153); font-weight: normal;">2017-10-28 19:18:25</b></div></dd></dl><dl class="hd"><dt class="fl"><img src="http://ksd.oss-cn-shanghai.aliyuncs.com/uc_server/data/avatar/noavatar_big.png?x-oss-process=image/resize,m_lfit,h_100,w_100" width="100/"><p style="padding: 10px; font-weight: normal;">ksd188xxxx2150</p></dt> <dd class="fl"><div class="xbx"><div class="str-bf"><i class="i-1-1" style="width: 100%;"></i> <i class="i-1" style="width: 100%;"></i></div> <span><p style="color: rgb(51, 51, 51); font-weight: bold;"></p>赞一个！！！</span> <b style="color: rgb(153, 153, 153); font-weight: normal;">2017-10-28 19:16:59</b></div></dd></dl><dl class="hd"><dt class="fl"><img src="http://ksd.oss-cn-shanghai.aliyuncs.com/uc_server/data/avatar/noavatar_big.png?x-oss-process=image/resize,m_lfit,h_100,w_100" width="100/"><p style="padding: 10px; font-weight: normal;">ksd188xxxx2150</p></dt> <dd class="fl"><div class="xbx"><div class="str-bf"><i class="i-1-1" style="width: 100%;"></i> <i class="i-1" style="width: 100%;"></i></div> <span><p style="color: rgb(51, 51, 51); font-weight: bold;"></p>好，好！赞 </span> <b style="color: rgb(153, 153, 153); font-weight: normal;">2017-10-28 19:16:26</b></div></dd></dl><dl class="hd"><dt class="fl"><img src="http://ksd.oss-cn-shanghai.aliyuncs.com/uc_server/data/avatar/2017/bGuSmURbEL.png?x-oss-process=image/resize,m_lfit,h_100,w_100" width="100/"><p style="padding: 10px; font-weight: normal;">安乐</p></dt> <dd class="fl"><div class="xbx"><div class="str-bf"><i class="i-1-1" style="width: 100%;"></i> <i class="i-1" style="width: 100%;"></i></div> <span><p style="color: rgb(51, 51, 51); font-weight: bold;"></p>不错，不错，</span> <b style="color: rgb(153, 153, 153); font-weight: normal;">2017-10-25 14:46:21</b></div></dd></dl><dl class="hd"><dt class="fl"><img src="http://ksd.oss-cn-shanghai.aliyuncs.com/uc_server/data/avatar/2017/bGuSmURbEL.png?x-oss-process=image/resize,m_lfit,h_100,w_100" width="100/"><p style="padding: 10px; font-weight: normal;">安乐</p></dt> <dd class="fl"><div class="xbx"><div class="str-bf"><i class="i-1-1" style="width: 100%;"></i> <i class="i-1" style="width: 100%;"></i></div> <span><p style="color: rgb(51, 51, 51); font-weight: bold;"></p>不错，不错，</span> <b style="color: rgb(153, 153, 153); font-weight: normal;">2017-10-25 08:08:33</b></div></dd></dl> </div> <div class="js-nr-e" style="background: rgb(245, 245, 245); padding: 50px 30px;"></div></li>
+                </ul>
+            </div>
+</html>
